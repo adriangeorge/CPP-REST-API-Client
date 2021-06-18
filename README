@@ -1,0 +1,65 @@
+324CC Cioban George-Adrian
+Protocale de Comunicatie 
+Tema 3
+
+Timp de implemenentare: 1 Zi (cumulat) de lucru 
+
+Resurse folosite:
+    - Functii implementate in laboratorul 10 de PC
+
+Rulare:
+
+    Pentru compilare se poate rula comanda:
+        
+    *   make
+
+    Pentru rulare se poate rula apoi:
+        
+    *   make run
+    
+    Se genereaza un fisier executabil ce poate fi indepartat cu: 
+
+    *   make clean
+
+Explicatii pentru rezolvarea temei:
+
+    [0] ClientClass - Clasa folosita pentru a implementa partea de client
+
+        Toate comenzile functioneaza exact cum sunt descrise si in cerinta 
+        (acelasi input si acelasi output/functionalitate)
+        Numele comenzilor respecta intocmai indicatiile din enunt
+        de asemenea am adaugat o functie help() care reaminteste utilizatorului
+        ce comenzi sunt disponibile atunci cand introduce o comanda necunoscuta
+        Aceasta apelata automat atunci cand se introduce orice alta comanda
+        decat cele descrise in cerinta
+
+        Tokenurile de login si JWT sunt stocate in instanta client ca si
+        string-uri iar la delogare atuncia sunt setate pe empty string ("")
+
+        Citirea titlului de carte/autor format din mai multe cuvinte se
+        realizeaza prin utilizarea unui string stream
+
+        Pentru aspect si un feedback mai bun catre user au fost adaugate
+        mesaje de eroare si formatarea output-ului (de ex. pentru
+        comanda get_books)
+
+    [1] Structura recvServer contine:
+        - string headers
+            Contine toata informatia din headerele raspunsului primit
+
+        - string content
+            Contine efectiv payload-ul primit de la server
+
+        - int content_len
+            Lungimea continutului la care ne putem astepta
+
+        Aceasta sturctura a fost declarata pur si simplu pentru usurarea
+        accesului la informatia primita de la server
+
+    [2] Biblioteca nlohmann JSON
+
+        - Am decis sa folosesc aceasta biblioteca deoarece a fost recomandata
+        in enunt asftel am stiut sigur ca are functionalitatea necesara 
+        pentru rezolvarea temei. De asemenea am ales-o pentru felul familiar
+        de a popula un obiect JSON (asemanator unui map din C++) si pentru
+        usurinta importarii (un drag and drop de fisier header).
